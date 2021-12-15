@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				  xmlns:res="http://www.titan.com/Reservation"
+			      xmlns:cust="http://www.titan.com/Customer"
+				  xmlns="http://schemas.xmlsoap.org/wsdl/"
+				  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+				  xmlns:titan="http://www.titan.com/titan"
+				  name="ServizioPrenotazione" targetNamespace="http://www.titan.com/titan">
+
+	<documentation>SOAP Definition</documentation>
+	<types>
+		<xsd:schema>
+			<xsd:import namespace="http://www.titan.com/Reservation"  schemaLocation="reservation.xsd"/>
+			<xsd:import namespace="http://www.titan.com/Customer"  schemaLocation="customer.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="CustomerMessage">
+		<part name="parameters" element="cust:Customer"/>
+	</message>
+	<message name="ReservationMessage">
+		<part name="parameters" element="res:Reservation"/>
+	</message>
+
+	<!--This element defines the service operations and the combination of input and output elements to clients-->
+	<portType name="ServizioPrenotazionePortType">
+		<operation name="prenotazione">
+			<input message="titan:CustomerMessage"/>
+			<output message="titan:ReservationMessage"/>
+		</operation>
+	</portType>
+
+	<!-- This element provides specific details on how an operation will actually be transmitted over the network-->
+	<binding name="ServizioPrenotazioneSOAP" type="titan:ServizioPrenotazionePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="prenotazione">
+			<soap:operation soapAction="http://www.titan.com/prenotazione"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<!-- Definition of the service and the endpoint. -->
+	<service name="ServizioPrenotazione">
+		<port name="ServizioPrenotazioneSOAP" binding="titan:ServizioPrenotazioneSOAP">
+			<soap:address location="http://localhost:8080/spring/ws/ServizioPrenotazione"/>
+		</port>
+	</service>
+</definitions>

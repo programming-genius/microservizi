@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:dep="http://www.titan.com/Dependency"
+		targetNamespace="http://www.titan.com/Customer">
+		
+	<import namespace="http://www.titan.com/Dependency" schemaLocation="dependency.xsd" />
+	<element name="Customer">
+		<complexType>
+			<sequence>
+				<element name="dati" type="dep:CustomerType" />
+			</sequence>
+		</complexType>
+	</element>
+</schema>

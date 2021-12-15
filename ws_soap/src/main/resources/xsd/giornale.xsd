@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		   xmlns:gio="http://www.giornale.com/giornale"
+		   targetNamespace="http://www.giornale.com/giornale">
+
+<!-- definizione del tipo di dato articolo -->
+	<complexType name="tipo_articolo">
+		<sequence>
+			<element name="titolo" type="string"/>
+			<element name="sottotitolo" type="string"/>
+			<element name="autore" type="string"/>
+			<element name="data" type="date"/>
+			<element name="paragrafo" type="string" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<!-- definizione dell'elemento giornale -->
+	<element name="giornale">
+		<complexType>
+			<sequence>
+				<element name="articolo" type="gio:tipo_articolo"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

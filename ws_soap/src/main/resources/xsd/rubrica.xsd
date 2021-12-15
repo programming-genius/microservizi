@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		   xmlns:rub="http://www.rubrica.com/rubrica"
+		   targetNamespace="http://www.rubrica.com/rubrica">
+<!--Definizione del tipo di dato indirizzo -->
+	<complexType name="tipo_indirizzo">
+		<sequence>
+			<element name="via" type="string"/>
+			<element name="numero">
+				<simpleType>
+					<restriction base="integer">
+						<minExclusive value="0"/>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="citta" type="string"/>
+			<element name="provincia">
+				<simpleType>
+					<restriction base="string">
+						<maxLength value="4"/>
+					</restriction>
+				</simpleType>
+			</element>
+		</sequence>
+	</complexType>
+	<!--Definizione del tipo di dato persona -->
+	<complexType name="tipo_persona">
+		<sequence>
+			<element name="cognome" type="string"/>
+			<element name="nome" type="string"/>
+			<element name="indirizzo" type="rub:tipo_indirizzo"/>
+			<element name="telefono" type="string" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="email" type="string" minOccurs="0" maxOccurs="1"/>
+			<element name="sitoWeb" type="string" minOccurs="0" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<!--Definizione dell'elemento rubrica -->
+	<element name="rubrica">
+		<complexType>
+			<sequence>
+				<element name="persona" type="rub:tipo_persona" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

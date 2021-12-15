@@ -1,0 +1,7 @@
+<book:libro xmlns:book="http://www.biblio.com/book">
+  <descrizione>string</descrizione>
+  <author>
+    <nome>string</nome>
+    <cognome>string</cognome>
+  </author>
+</book:libro>

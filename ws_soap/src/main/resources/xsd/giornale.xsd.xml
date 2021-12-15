@@ -1,0 +1,10 @@
+<giornale>
+  <articolo>
+    <titolo>string</titolo>
+    <sottotitolo>string</sottotitolo>
+    <autore>string</autore>
+    <data>2008-09-29</data>
+    <!--1 or more repetitions:-->
+    <paragrafo>string</paragrafo>
+  </articolo>
+</giornale>

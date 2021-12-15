@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:book="http://www.biblio.com/book"
+        targetNamespace=" http://www.biblio.com/book ">
+    <element name="libro" type="book:BookType"/>
+        <complexType name="BookType">
+            <sequence>
+                <element name="descrizione"   type="string" />
+                <element name="author" type="book:AuthorType" />
+            </sequence></complexType>
+        <complexType name="AuthorType">
+        <sequence>
+            <element name="nome" type="string" />
+             <element name="cognome"   type="string" />
+        </sequence>
+    </complexType>
+</schema>

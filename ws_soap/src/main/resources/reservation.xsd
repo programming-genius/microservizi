@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:dep="http://www.titan.com/Dependency"
+		targetNamespace="http://www.titan.com/Reservation">
+		
+	<import namespace="http://www.titan.com/Dependency" schemaLocation="dependency.xsd" />
+	<element name="Reservation">
+		<complexType>
+			<sequence>
+				<element name="amount"  type="float" />
+				<element name="room" 	type="int" />
+				<element name="customer" type="dep:CustomerType" />
+				<element name="Error" type="dep:Error" />
+			</sequence>
+		</complexType>
+	</element>
+</schema>		

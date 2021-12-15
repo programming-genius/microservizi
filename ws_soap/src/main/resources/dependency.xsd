@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:dep="http://www.titan.com/Dependency"
+		targetNamespace="http://www.titan.com/Dependency">
+
+		<complexType name="AddressType">
+			<sequence>
+				<element name="street" type="string" />
+				<element name="city"   type="string" />
+				<element name="state"  type="string" />
+				<element name="zip"    type="string" />
+			</sequence>
+    	</complexType>
+
+		<complexType name="CustomerType">
+			<sequence>
+				<element name="last-name"   type="string" />
+				<element name="first-name" 	type="string" />
+				<element name="address"     type="dep:AddressType" />
+			</sequence>
+		</complexType>
+
+		<complexType name="Fault">
+			<sequence>
+				<element name="FaultCode" type="int" minOccurs="1" maxOccurs="1"/>
+				<element name="FaultMessage" type="string" minOccurs="1" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+
+		<complexType name="Error">
+			<sequence>
+				<element name="ErrorInfo" type="dep:Fault" minOccurs="0" maxOccurs="1" />
+				<element name="Message" type="string" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+</schema>

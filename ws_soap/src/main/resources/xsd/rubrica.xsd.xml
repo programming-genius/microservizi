@@ -1,0 +1,19 @@
+<rubrica>
+  <!--Zero or more repetitions:-->
+  <persona>
+    <cognome>string</cognome>
+    <nome>string</nome>
+    <indirizzo>
+      <via>string</via>
+      <numero>100</numero>
+      <citta>string</citta>
+      <provincia>stri</provincia>
+    </indirizzo>
+    <!--Zero or more repetitions:-->
+    <telefono>string</telefono>
+    <!--Optional:-->
+    <email>string</email>
+    <!--Optional:-->
+    <sitoWeb>string</sitoWeb>
+  </persona>
+</rubrica>

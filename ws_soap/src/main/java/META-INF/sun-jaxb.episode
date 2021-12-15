@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+      
+    <!--
+
+Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.3.0 
+Vedere <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+Generato il: 2021.12.13 alle 01:43:22 PM CET 
+
+  -->
+      
+    <bindings xmlns:tns="http://www.titan.com/Customer" if-exists="true" scd="x-schema::tns">
+            
+        <schemaBindings map="false">
+                  
+            <package name="jdk.spring.ws"/>
+                
+        </schemaBindings>
+            
+        <bindings if-exists="true" scd="tns:Customer">
+                  
+            <class ref="jdk.spring.ws.Customer"/>
+                
+        </bindings>
+          
+    </bindings>
+      
+    <bindings xmlns:tns="http://www.titan.com/Dependency" if-exists="true" scd="x-schema::tns">
+            
+        <schemaBindings map="false">
+                  
+            <package name="jdk.spring.ws"/>
+                
+        </schemaBindings>
+            
+        <bindings if-exists="true" scd="~tns:CustomerType">
+                  
+            <class ref="jdk.spring.ws.CustomerType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:AddressType">
+                  
+            <class ref="jdk.spring.ws.AddressType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:Fault">
+                  
+            <class ref="jdk.spring.ws.Fault"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:Error">
+                  
+            <class ref="jdk.spring.ws.Error"/>
+                
+        </bindings>
+          
+    </bindings>
+      
+    <bindings xmlns:tns="http://www.titan.com/Reservation" if-exists="true" scd="x-schema::tns">
+            
+        <schemaBindings map="false">
+                  
+            <package name="jdk.spring.ws"/>
+                
+        </schemaBindings>
+            
+        <bindings if-exists="true" scd="tns:Reservation">
+                  
+            <class ref="jdk.spring.ws.Reservation"/>
+                
+        </bindings>
+          
+    </bindings>
+    
+</bindings>
