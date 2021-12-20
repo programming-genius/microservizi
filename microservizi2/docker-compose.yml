@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  ms2:
+    build:
+      context: .
+      dockerfile: Dockerfile_app_ms2.dev
+    container_name: ms2
+    depends_on:
+      - db2
+    ports:
+      - '90:90'
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db2:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+          
+  db2:
+    container_name: db2
+    build:
+      context: .
+      dockerfile: Dockerfile_ms2.dev
+    ports:
+      - '5432:5432'
